@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context="com.mobidev.multiwindowmodedemo.FirstActivity">
+    tools:context="com.mobidev.multiwindowmodedemo.activities.LifecycleActivity">
 
     <TextView
         android:id="@+id/log_textView"

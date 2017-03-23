@@ -1,4 +1,4 @@
-package com.mobidev.multiwindowmodedemo;
+package com.mobidev.multiwindowmodedemo.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,9 @@ import android.text.TextWatcher;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-public class FirstActivity extends AppCompatActivity {
+import com.mobidev.multiwindowmodedemo.R;
+
+public class LifecycleActivity extends AppCompatActivity {
 
     private TextView logTextView;
     private ScrollView contentScrollView;
@@ -58,8 +60,14 @@ public class FirstActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
-        super.onStop();
         logTextView.append("\n onStop");
+        super.onStop();
+    }
+
+    @Override
+    public void onMultiWindowModeChanged(boolean isInMultiWindowMode) {
+        logTextView.append("\n onMultiWindowModeChanged = " + isInMultiWindowMode);
+        super.onMultiWindowModeChanged(isInMultiWindowMode);
     }
 
 }
